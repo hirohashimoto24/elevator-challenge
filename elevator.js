@@ -33,15 +33,15 @@ export default class Elevator {
 
       this.checkFloor()
     }
-
-    if (this.checkReturnToLoby()) {
-      this.returnToLoby()
-    }
   }
 
   goToFloor(person) {
     this.requests.push(person)
     this.dispatch()
+
+    if (this.checkReturnToLoby()) {
+      this.returnToLoby()
+    }
   }
 
   moveUp() {
